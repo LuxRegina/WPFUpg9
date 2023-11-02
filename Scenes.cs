@@ -59,13 +59,13 @@ namespace DTP9_MUD_WPF_stub
                 "Nyfikenheten kittlar dig.\n" +
                 "För att gå in trycker du\n" +
                 "'w'. ",
-                N:3, E:Room.NoDoor, S:Room.NoDoor, W:Room.NoDoor),
+                N:1, E:Room.NoDoor, S:Room.NoDoor, W:Room.NoDoor),
             new Room(1, "Ingången","room-020.png",
                 "Du står framför en röd dörr.\n" +
                 "Väggarna är av kallt tegel. \n" +
                 "Du trycker försiktigt ned handtaget\n" +
                 "och går in i slottets gångar. ",
-                N:3, E:Room.NoDoor, S:Room.NoDoor, W:Room.NoDoor),
+                N:2, E:Room.NoDoor, S:Room.NoDoor, W:Room.NoDoor),
             new Room(2, "Början av äventyret", "ingang-stangd.png",
                 "Du står i ett rum med kala\n" +
                 "väggar. Ljuset från facklorna\n" +
@@ -76,10 +76,10 @@ namespace DTP9_MUD_WPF_stub
                 "Du står i ett rum utan vägar\n" +
                 "framåt. Du ser en hög med\n" +
                 "skräp nere till vänster.",
-                N:Room.NoDoor, E:2, S:Room.NoDoor, W:Room.NoDoor),
+                N:Room.NoDoor, E:4, S:Room.NoDoor, W:Room.NoDoor),
             new Room(4, "Vaktrum väst", "z-vaktrum-vast.png",
                 "Du står i ett övergivet vaktrum.",
-                N:Room.NoDoor, E: 3, S:Room.NoDoor, W:1),
+                N:Room.NoDoor, E: 5, S:Room.NoDoor, W:1),
             new Room(5, "Korsvägen", "z-korsvag-oppet.png",
                 "Du står i korsväg. Det går\n" +
                 "gångar i alla riktningar.",
@@ -91,35 +91,35 @@ namespace DTP9_MUD_WPF_stub
         public static string HelpImage() { return help.Image; }
         public static void DoCommand(string command)
         {
-            if (command == "w")
+            if (command == "W")
             {
                 int next = labyrinth[current].North;
                 warning = "";
                 if (next == Room.NoDoor) warning = "Du gick in i väggen!\n";
                 else current = next;
             }
-            else if (command == "s")
+            else if (command == "S")
             {
                 int next = labyrinth[current].South;
                 warning = "";
                 if (next == Room.NoDoor) warning = "Du gick in i väggen!\n";
                 else current = next;
             }
-            else if (command == "d")
+            else if (command == "D")
             {
                 int next = labyrinth[current].East;
                 warning = "";
                 if (next == Room.NoDoor) warning = "Du gick in i väggen!\n";
                 else current = next;
             }
-            else if (command == "a")
+            else if (command == "A")
             {
                 int next = labyrinth[current].West;
                 warning = "";
                 if (next == Room.NoDoor) warning = "Du gick in i väggen!\n";
                 else current = next;
             }
-            else if (command == "f")
+            else if (command == "F")
             {
                 warning = "Du hittade ingenting\n";
             }
