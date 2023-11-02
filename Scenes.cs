@@ -13,11 +13,13 @@ namespace DTP9_MUD_WPF_stub
         string title;
         string text;
         int north, east, south, west;
-        public Room(int self, string name, string text, int N, int E, int S, int W)
+        string image;
+        public Room(int self, string name, string image, string text, int N, int E, int S, int W)
         {
-            this.self = self; this.title = name; this.text = text;
+            this.self = self; this.title = name; this.image = image; this.text = text;
             north = N; east = E; south = S; west = W;
         }
+        public string Image { get { return image; } }
         public string Title { get { return title; } }
         public string Text { get { return text; } }
         public int North { get { return north; } }
@@ -36,12 +38,12 @@ namespace DTP9_MUD_WPF_stub
                 return dir;
             }
         }
-        public string Image { get { return text; } }
+        
     }
     public class Labyrinth
     {
         static string warning = "";
-        static Room help = new Room(-1, "Help",
+        static Room help = new Room(-1, "Help", "galler.png",
                "Följande kommandon finns:\n" +
                "  w - gå genom dörren norrut\n" +
                "  s - gå genom dörren söderut\n" +
@@ -58,27 +60,27 @@ namespace DTP9_MUD_WPF_stub
                 "För att gå in trycker du\n" +
                 "'w'. ",
                 N:3, E:Room.NoDoor, S:Room.NoDoor, W:Room.NoDoor),
-            new Room(1, "Ingången",
-                "Du står i ett rum med rött\n" +
-                "tegel. Väggarna fladdrar i\n" +
-                "facklornas sken. Du ser en\n" +
+            new Room(1, "Ingången","room-020.png",
+                "Du står framför en röd dörr.\n" +
+                "Väggarna är av kallt tegel. \n" +
+                "Du trycker försiktigt ned handtaget\n" +
+                "och går in i slottets gångar. ",
+                N:3, E:Room.NoDoor, S:Room.NoDoor, W:Room.NoDoor),
+            new Room(2, "Början av äventyret", "ingang-stangd.png",
+                "Du står i ett rum med kala\n" +
+                "väggar. Ljuset från facklorna\n" +
+                "lyser upp rummet. Du ser en\n" +
                 "hög med tyg nere till vänster. ",
                 N:3, E:Room.NoDoor, S:Room.NoDoor, W:Room.NoDoor),
-            new Room(2, "Början av äventyret",
-                "Du står i ett rum med rött\n" +
-                "tegel. Väggarna fladdrar i\n" +
-                "facklornas sken. Du ser en\n" +
-                "hög med tyg nere till vänster. ",
-                N:3, E:Room.NoDoor, S:Room.NoDoor, W:Room.NoDoor),
-            new Room(3, "Lagerrum väst",
+            new Room(3, "Lagerrum väst", "z-lagerrum-vast.png",
                 "Du står i ett rum utan vägar\n" +
                 "framåt. Du ser en hög med\n" +
                 "skräp nere till vänster.",
                 N:Room.NoDoor, E:2, S:Room.NoDoor, W:Room.NoDoor),
-            new Room(4, "Vaktrum väst",
+            new Room(4, "Vaktrum väst", "z-vaktrum-vast.png",
                 "Du står i ett övergivet vaktrum.",
                 N:Room.NoDoor, E: 3, S:Room.NoDoor, W:1),
-            new Room(5, "Korsvägen",
+            new Room(5, "Korsvägen", "z-korsvag-oppet.png",
                 "Du står i korsväg. Det går\n" +
                 "gångar i alla riktningar.",
                 N:6, E:4, S:0, W:2)
@@ -86,7 +88,7 @@ namespace DTP9_MUD_WPF_stub
         static int current = 0;
         public static string HelpTitle() { return help.Title; }
         public static string HelpText() { return help.Text; }
-        //public static string HelpImage() { return help.Image; }  // ToDo
+        public static string HelpImage() { return help.Image; }
         public static void DoCommand(string command)
         {
             if (command == "w")

@@ -25,7 +25,7 @@ namespace DTP9_MUD_WPF_stub
             Title.Text = Labyrinth.CurrentTitle();
             StoryField.Text = Labyrinth.CurrentText() +"\n"+ 
                 Labyrinth.WarningText() +
-            Labyrinth.CurrentImage();  //  MainImage= Labyrinth.CurrentImage();
+            Labyrinth.CurrentImage(); 
             Uri img = new Uri(imgDir+ Labyrinth.CurrentImage(), UriKind.RelativeOrAbsolute);
             MainImage.Source = BitmapFrame.Create(img);
         }
