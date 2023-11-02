@@ -22,9 +22,9 @@ namespace DTP9_MUD_WPF_stub
         {
             InitializeComponent();
             // Gör all initiering nedanför den här texten!
-            Title.Text = "SIMSALABIM!";
-            StoryField.Text = "Abrakadabra\nhokus pokus\nfiliokus";
-            Uri img = new Uri(imgDir+"illusion.png", UriKind.RelativeOrAbsolute);
+            Title.Text = "Slottet";
+            StoryField.Text = "Du hittar ett gammalt slott. \nNyfikenheten tar över.\nDu går in.";
+            Uri img = new Uri(imgDir+"slott.jpg", UriKind.RelativeOrAbsolute);
             MainImage.Source = BitmapFrame.Create(img);
         }
         private void ApplicationKeyPress(object sender, KeyEventArgs e)
