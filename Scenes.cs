@@ -65,25 +65,48 @@ namespace DTP9_MUD_WPF_stub
                 "Väggarna är av kallt tegel. \n" +
                 "Du trycker försiktigt ned handtaget\n" +
                 "och går in i slottets gångar. ",
-                N:2, E:Room.NoDoor, S:Room.NoDoor, W:Room.NoDoor),
+                N:2, E:Room.NoDoor, S:0, W:Room.NoDoor),
             new Room(2, "Början av äventyret", "ingang-stangd.png",
                 "Du står i ett rum med kala\n" +
                 "väggar. Ljuset från facklorna\n" +
                 "lyser upp rummet. Du ser en\n" +
                 "hög med tyg nere till vänster. ",
-                N:3, E:Room.NoDoor, S:Room.NoDoor, W:Room.NoDoor),
+                N:3, E:Room.NoDoor, S:1, W:Room.NoDoor),
             new Room(3, "Lagerrum väst", "z-lagerrum-vast.png",
-                "Du står i ett rum utan vägar\n" +
-                "framåt. Du ser en hög med\n" +
+                "Du står i ett rum med en dörr\n" +
+                "till vänster. Du ser en hög med\n" +
                 "skräp nere till vänster.",
-                N:Room.NoDoor, E:4, S:Room.NoDoor, W:Room.NoDoor),
-            new Room(4, "Vaktrum väst", "z-vaktrum-vast.png",
-                "Du står i ett övergivet vaktrum.",
-                N:Room.NoDoor, E: 5, S:Room.NoDoor, W:1),
-            new Room(5, "Korsvägen", "z-korsvag-oppet.png",
+                N:Room.NoDoor, E:4, S:2, W:Room.NoDoor),
+            new Room(4, "Korsvägen", "z-korsvag-oppet.png",
                 "Du står i korsväg. Det går\n" +
                 "gångar i alla riktningar.",
-                N:6, E:4, S:0, W:2)
+                N:7, E:5, S:3, W:6),
+            new Room(5, "Återvändsgränd", "room-base.png",
+                "Du kommer in i ett rum\n" +
+                "helt utan dörrar. Gå tillbaka\n" +
+                "och välj en annan väg.",
+                N:Room.NoDoor, E:Room.NoDoor, S:4, W:Room.NoDoor),
+            new Room(6, "Mörk gång", "z-gang.png",
+                "Du hör forsande vatten.\n" +
+                "Det är väldigt mörkt framåt.\n" +
+                "Dina steg ekar bakom dig.",
+                N:8, E:Room.NoDoor, S:4, W:Room.NoDoor),
+            new Room(7, "Illabådande ljud", "fram.png",
+                "Du ser en öppning med rött ljus.\n" +
+                "Ifrån öppningen hör du ett\n" +
+                "blött, ploppande ljud.",
+                N:10, E:Room.NoDoor, S:4, W:Room.NoDoor),
+            new Room(8, "Bro", "bro.png",
+                "Du kommer fram till en bro\n" +
+                "som leder över ett kraftigt \n" +
+                "vattendrag. Gå försiktigt!",
+                N:9, E:Room.NoDoor, S:6, W:Room.NoDoor),
+            new Room(10, "Uh-Oh", "septopus.png",
+                "Ett stort monster drar\n" +
+                "sig framåt mot dig med\n" +
+                "sina långa blöta tentakler!\n" +
+                "SPRIIIING!",
+                N:Room.NoDoor, E:Room.NoDoor, S:7, W:Room.NoDoor),
         };
         static int current = 0;
         public static string HelpTitle() { return help.Title; }

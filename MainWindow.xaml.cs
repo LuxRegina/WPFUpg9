@@ -25,10 +25,8 @@ namespace DTP9_MUD_WPF_stub
             InitializeComponent();
             // Gör all initiering nedanför den här texten!
             Title.Text = Labyrinth.CurrentTitle();
-            StoryField.Text = Labyrinth.CurrentText() +"\n"+ 
-                Labyrinth.WarningText() +
-            Labyrinth.CurrentImage(); 
-            Uri img = new Uri(imgDir+ Labyrinth.CurrentImage(), UriKind.RelativeOrAbsolute);
+            StoryField.Text = Labyrinth.CurrentText() + Labyrinth.WarningText();
+            Uri img = new Uri(imgDir + Labyrinth.CurrentImage(), UriKind.RelativeOrAbsolute);
             MainImage.Source = BitmapFrame.Create(img);
         }
         private async void ApplicationKeyPress(object sender, KeyEventArgs e)
