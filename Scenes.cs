@@ -36,6 +36,7 @@ namespace DTP9_MUD_WPF_stub
                 return dir;
             }
         }
+        public string Image { get { return text; } }
     }
     public class Labyrinth
     {
@@ -51,21 +52,33 @@ namespace DTP9_MUD_WPF_stub
                "  z - avsluta\n",
                Room.NoDoor, Room.NoDoor, Room.NoDoor, Room.NoDoor);
         static List<Room> labyrinth = new List<Room>() {
-            new Room(0, "Start",
+             new Room(0, "Slottet", "slott.jpg",
+                "Du ser ett slott framför dig.\n" +
+                "Nyfikenheten kittlar dig.\n" +
+                "För att gå in trycker du\n" +
+                "'w'. ",
+                N:3, E:Room.NoDoor, S:Room.NoDoor, W:Room.NoDoor),
+            new Room(1, "Ingången",
                 "Du står i ett rum med rött\n" +
                 "tegel. Väggarna fladdrar i\n" +
                 "facklornas sken. Du ser en\n" +
                 "hög med tyg nere till vänster. ",
                 N:3, E:Room.NoDoor, S:Room.NoDoor, W:Room.NoDoor),
-            new Room(1, "Lagerrum väst",
+            new Room(2, "Början av äventyret",
+                "Du står i ett rum med rött\n" +
+                "tegel. Väggarna fladdrar i\n" +
+                "facklornas sken. Du ser en\n" +
+                "hög med tyg nere till vänster. ",
+                N:3, E:Room.NoDoor, S:Room.NoDoor, W:Room.NoDoor),
+            new Room(3, "Lagerrum väst",
                 "Du står i ett rum utan vägar\n" +
                 "framåt. Du ser en hög med\n" +
                 "skräp nere till vänster.",
                 N:Room.NoDoor, E:2, S:Room.NoDoor, W:Room.NoDoor),
-            new Room(2, "Vaktrum väst",
+            new Room(4, "Vaktrum väst",
                 "Du står i ett övergivet vaktrum.",
                 N:Room.NoDoor, E: 3, S:Room.NoDoor, W:1),
-            new Room(3, "Korsvägen",
+            new Room(5, "Korsvägen",
                 "Du står i korsväg. Det går\n" +
                 "gångar i alla riktningar.",
                 N:6, E:4, S:0, W:2)
@@ -73,43 +86,44 @@ namespace DTP9_MUD_WPF_stub
         static int current = 0;
         public static string HelpTitle() { return help.Title; }
         public static string HelpText() { return help.Text; }
+        //public static string HelpImage() { return help.Image; }  // ToDo
         public static void DoCommand(string command)
         {
             if (command == "w")
             {
                 int next = labyrinth[current].North;
                 warning = "";
-                if (next == Room.NoDoor) warning = "du gick in i väggen!\n";
+                if (next == Room.NoDoor) warning = "Du gick in i väggen!\n";
                 else current = next;
             }
             else if (command == "s")
             {
                 int next = labyrinth[current].South;
                 warning = "";
-                if (next == Room.NoDoor) warning = "du gick in i väggen!\n";
+                if (next == Room.NoDoor) warning = "Du gick in i väggen!\n";
                 else current = next;
             }
             else if (command == "d")
             {
                 int next = labyrinth[current].East;
                 warning = "";
-                if (next == Room.NoDoor) warning = "du gick in i väggen!\n";
+                if (next == Room.NoDoor) warning = "Du gick in i väggen!\n";
                 else current = next;
             }
             else if (command == "a")
             {
                 int next = labyrinth[current].West;
                 warning = "";
-                if (next == Room.NoDoor) warning = "du gick in i väggen!\n";
+                if (next == Room.NoDoor) warning = "Du gick in i väggen!\n";
                 else current = next;
             }
             else if (command == "f")
             {
-                warning = "du hittade ingenting\n";
+                warning = "Du hittade ingenting\n";
             }
             else
             {
-                warning = "okänt kommando\n";
+                warning = "Okänt kommando\n";
             }
         }
         internal static string CurrentTitle()
@@ -127,6 +141,10 @@ namespace DTP9_MUD_WPF_stub
         internal static string Directions()
         {
             return labyrinth[current].Directions;
+        }
+        internal static string CurrentImage()
+        {
+            return labyrinth[current].Image;
         }
     }
 }
