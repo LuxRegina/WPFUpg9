@@ -22,8 +22,9 @@ namespace DTP9_MUD_WPF_stub
         {
             InitializeComponent();
             // Gör all initiering nedanför den här texten!
-            Title.Text = "Slottet";
-            StoryField.Text = "Du hittar ett gammalt slott. \nNyfikenheten tar över.\nDu går in.";
+            Title.Text = Labyrinth.CurrentTitle();
+            StoryField.Text = Labyrinth.CurrentText() +"\n"+ 
+                Labyrinth.WarningText();              // ToDo  --- Labyrinth.CurrentImage();
             Uri img = new Uri(imgDir+"slott.jpg", UriKind.RelativeOrAbsolute);
             MainImage.Source = BitmapFrame.Create(img);
         }
@@ -38,9 +39,9 @@ namespace DTP9_MUD_WPF_stub
             }
             else if (e.Key == Key.W)
             {
-                Title.Text = "AAAAAAAAAH!";
-                StoryField.Text = "Namen aaaaah!\nÅååååh!\nÄäääää!";
-                Uri img = new Uri(imgDir + "illusion2.png", UriKind.RelativeOrAbsolute);
+                Title.Text = "Ingången";
+                StoryField.Text = "";
+                Uri img = new Uri(imgDir + "ingang.png", UriKind.RelativeOrAbsolute);
                 MainImage.Source = BitmapFrame.Create(img);
             }
             else if (e.Key == Key.A)
