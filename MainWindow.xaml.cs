@@ -36,14 +36,35 @@ namespace DTP9_MUD_WPF_stub
             {
                 System.Windows.Application.Current.Shutdown();
             }
-            else if (e.Key == Key.A)
+            else if (e.Key == Key.W)
             {
                 Title.Text = "AAAAAAAAAH!";
                 StoryField.Text = "Namen aaaaah!\nÅååååh!\nÄäääää!";
                 Uri img = new Uri(imgDir + "illusion2.png", UriKind.RelativeOrAbsolute);
                 MainImage.Source = BitmapFrame.Create(img);
             }
-            else if (e.Key == Key.I)
+            else if (e.Key == Key.A)
+            {
+                Title.Text = "IIIIIIIIIH!";
+                StoryField.Text = "Jasäjabah iiiiiiiih!";
+                Uri img = new Uri(imgDir + "winterbath.png", UriKind.RelativeOrAbsolute);
+                MainImage.Source = BitmapFrame.Create(img);
+            }
+            else if (e.Key == Key.S)
+            {
+                Title.Text = "IIIIIIIIIH!";
+                StoryField.Text = "Jasäjabah iiiiiiiih!";
+                Uri img = new Uri(imgDir + "winterbath.png", UriKind.RelativeOrAbsolute);
+                MainImage.Source = BitmapFrame.Create(img);
+            }
+            else if (e.Key == Key.D)
+            {
+                Title.Text = "IIIIIIIIIH!";
+                StoryField.Text = "Jasäjabah iiiiiiiih!";
+                Uri img = new Uri(imgDir + "winterbath.png", UriKind.RelativeOrAbsolute);
+                MainImage.Source = BitmapFrame.Create(img);
+            }
+            else if (e.Key == Key.F)
             {
                 Title.Text = "IIIIIIIIIH!";
                 StoryField.Text = "Jasäjabah iiiiiiiih!";
