@@ -106,7 +106,7 @@ namespace DTP9_MUD_WPF_stub
                 "sig framåt mot dig med\n" +
                 "sina långa blöta tentakler!\n" +
                 "SPRIIIING!",
-                N:Room.NoDoor, E:Room.NoDoor, S:7, W:Room.NoDoor),
+                N:Room.NoDoor, E:Room.NoDoor, S:7, W:Room.NoDoor)
         };
         static int current = 0;
         public static string HelpTitle() { return help.Title; }
