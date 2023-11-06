@@ -95,18 +95,29 @@ namespace DTP9_MUD_WPF_stub
                 "Du ser en öppning med rött ljus.\n" +
                 "Ifrån öppningen hör du ett\n" +
                 "blött, ploppande ljud.",
-                N:10, E:Room.NoDoor, S:4, W:Room.NoDoor),
+                N:9, E:Room.NoDoor, S:4, W:Room.NoDoor),
             new Room(8, "Bro", "bro.png",
                 "Du kommer fram till en bro\n" +
                 "som leder över ett kraftigt \n" +
                 "vattendrag. Gå försiktigt!",
-                N:9, E:Room.NoDoor, S:6, W:Room.NoDoor),
-            new Room(10, "Uh-Oh", "septopus.png",
+                N:10, E:Room.NoDoor, S:6, W:Room.NoDoor),
+            new Room(9, "Uh-Oh", "septopus.png",
                 "Ett stort monster drar\n" +
                 "sig framåt mot dig med\n" +
                 "sina långa blöta tentakler!\n" +
                 "SPRIIIING!",
-                N:Room.NoDoor, E:Room.NoDoor, S:7, W:Room.NoDoor)
+                N:Room.NoDoor, E:Room.NoDoor, S:7, W:Room.NoDoor),
+            new Room(10, "Hinder", "grind.jpg",
+                "Du kommer fram till en låst grind. \n" +
+                "Bortanför den ser du en öppen dörr\n" +
+                "som ger en glimt av grönt gräs och träd.",
+                N:11, E:Room.NoDoor, S:8, W:Room.NoDoor),
+             new Room(11, "Freedom", "exit.jpg",
+                "Långt bort ser du en öppen dörr \n" +
+                "Genom öppningen ser du\n" +
+                "grönt gräs och träd.\n" +
+                "Fåglarna kvittrar när du kliver ut genom slottets bakdörr!",
+                N:Room.NoDoor, E:Room.NoDoor, S:8, W:Room.NoDoor)
         };
         static int current = 0;
         public static string HelpTitle() { return help.Title; }
@@ -117,6 +128,11 @@ namespace DTP9_MUD_WPF_stub
             if (command == "W")
             {
                 int next = labyrinth[current].North;
+                if (next >= labyrinth.Count)
+                {
+                    warning = "Room not implemented.";
+                    return;
+                }
                 warning = "";
                 if (next == Room.NoDoor) warning = "Du gick in i väggen!\n";
                 else current = next;
@@ -124,6 +140,11 @@ namespace DTP9_MUD_WPF_stub
             else if (command == "S")
             {
                 int next = labyrinth[current].South;
+                if (next >= labyrinth.Count)
+                {
+                    warning = "Room not implemented.";
+                    return;
+                }
                 warning = "";
                 if (next == Room.NoDoor) warning = "Du gick in i väggen!\n";
                 else current = next;
@@ -131,6 +152,11 @@ namespace DTP9_MUD_WPF_stub
             else if (command == "D")
             {
                 int next = labyrinth[current].East;
+                if (next >= labyrinth.Count)
+                {
+                    warning = "Room not implemented.";
+                    return;
+                }
                 warning = "";
                 if (next == Room.NoDoor) warning = "Du gick in i väggen!\n";
                 else current = next;
@@ -138,6 +164,11 @@ namespace DTP9_MUD_WPF_stub
             else if (command == "A")
             {
                 int next = labyrinth[current].West;
+                if (next >= labyrinth.Count)
+                {
+                    warning = "Room not implemented.";
+                    return;
+                }
                 warning = "";
                 if (next == Room.NoDoor) warning = "Du gick in i väggen!\n";
                 else current = next;

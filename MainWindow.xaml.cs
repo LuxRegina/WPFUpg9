@@ -25,7 +25,7 @@ namespace DTP9_MUD_WPF_stub
             InitializeComponent();
             // Gör all initiering nedanför den här texten!
             Title.Text = Labyrinth.CurrentTitle();
-            StoryField.Text = Labyrinth.CurrentText() + Labyrinth.WarningText();
+            StoryField.Text = Labyrinth.CurrentText() +"\n" + Labyrinth.WarningText();
             Uri img = new Uri(imgDir + Labyrinth.CurrentImage(), UriKind.RelativeOrAbsolute);
             MainImage.Source = BitmapFrame.Create(img);
         }
@@ -44,7 +44,7 @@ namespace DTP9_MUD_WPF_stub
                
 
                 Title.Text = Labyrinth.CurrentTitle();
-                StoryField.Text = Labyrinth.CurrentText();
+                StoryField.Text = Labyrinth.CurrentText() + "\n" + Labyrinth.WarningText();
                 Uri img = new Uri(imgDir + Labyrinth.CurrentImage(), UriKind.RelativeOrAbsolute);
                 MainImage.Source = BitmapFrame.Create(img);
             }
@@ -53,7 +53,7 @@ namespace DTP9_MUD_WPF_stub
                 Labyrinth.DoCommand("A");
 
                 Title.Text = Labyrinth.CurrentTitle();
-                StoryField.Text = Labyrinth.CurrentText();
+                StoryField.Text = Labyrinth.CurrentText() + "\n" + Labyrinth.WarningText();
                 Uri img = new Uri(imgDir + Labyrinth.CurrentImage(), UriKind.RelativeOrAbsolute);
                 MainImage.Source = BitmapFrame.Create(img);
             }
@@ -62,7 +62,7 @@ namespace DTP9_MUD_WPF_stub
                 Labyrinth.DoCommand("S");
 
                 Title.Text = Labyrinth.CurrentTitle();
-                StoryField.Text = Labyrinth.CurrentText();
+                StoryField.Text = Labyrinth.CurrentText() + "\n" + Labyrinth.WarningText();
                 Uri img = new Uri(imgDir + Labyrinth.CurrentImage(), UriKind.RelativeOrAbsolute);
                 MainImage.Source = BitmapFrame.Create(img);
             }
@@ -71,7 +71,7 @@ namespace DTP9_MUD_WPF_stub
                 Labyrinth.DoCommand("D");
 
                 Title.Text = Labyrinth.CurrentTitle();
-                StoryField.Text = Labyrinth.CurrentText();
+                StoryField.Text = Labyrinth.CurrentText() + "\n" + Labyrinth.WarningText();
                 Uri img = new Uri(imgDir + Labyrinth.CurrentImage(), UriKind.RelativeOrAbsolute);
                 MainImage.Source = BitmapFrame.Create(img);
             }
@@ -80,7 +80,7 @@ namespace DTP9_MUD_WPF_stub
                 Labyrinth.DoCommand("F");
 
                 Title.Text = Labyrinth.CurrentTitle();
-                StoryField.Text = Labyrinth.CurrentText();
+                StoryField.Text = Labyrinth.CurrentText() + "\n" + Labyrinth.WarningText();
                 Uri img = new Uri(imgDir + Labyrinth.CurrentImage(), UriKind.RelativeOrAbsolute);
                 MainImage.Source = BitmapFrame.Create(img);
             }
